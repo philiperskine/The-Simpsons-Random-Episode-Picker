@@ -240,12 +240,11 @@ first_178_episodes_dict = {
 
 # Defining the menu function
 def menu():
-    print("""Welcome to The Simpsons Random Episode Picker!
-This program currently features every episode from Seasons 1-8.
-- Enter 'R' for a random episode from any season
+    print("""- Enter 'R' for a random episode from any season
 - Enter a numeric key from '1' to '8' to pick a random episode from a season
 (e.g. enter '1' for a random Season 1 episode, '2' for Season 2, etc.)                   
-- Enter 'Q' to quit.""")
+- Enter 'Q' to quit.
+""")
 
 # Defining the Disney+ episode number function, which specifies the season
 # and episode numbers as listed on Disney+ (e.g. Season 2: Episode 1, etc.)
@@ -366,6 +365,10 @@ def disc_finder():
         print("DVD: Season 8, Disc 4.")
 
 # THE PROGRAM
+print("""Welcome to The Simpsons Random Episode Picker!
+This program currently features every episode from Seasons 1-8.
+""")
+
 user_input = ''
 while user_input != 'q':
     menu()
@@ -376,29 +379,21 @@ while user_input != 'q':
         sys.exit("Thank you for using The Simpsons Random Episode Picker!")
     
     elif user_input == '1':
-        random_episode_number = random.randint(1,13)
-            
+        random_episode_number = random.randint(1,13)        
     elif user_input == '2':
-        random_episode_number = random.randint(14,35)
-                
+        random_episode_number = random.randint(14,35)          
     elif user_input == '3':
-        random_episode_number = random.randint(36,59)
-                
+        random_episode_number = random.randint(36,59)            
     elif user_input == '4':
-        random_episode_number = random.randint(60,81)
-                
+        random_episode_number = random.randint(60,81)         
     elif user_input == '5':
-        random_episode_number = random.randint(82,103)
-                
+        random_episode_number = random.randint(82,103)                
     elif user_input == '6':
-        random_episode_number = random.randint(104,128)
-            
+        random_episode_number = random.randint(104,128)          
     elif user_input == '7':
-        random_episode_number = random.randint(129,153)
-                
+        random_episode_number = random.randint(129,153)             
     elif user_input == '8':
-        random_episode_number = random.randint(154,178)
-            
+        random_episode_number = random.randint(154,178)         
     elif user_input == 'r':
         random_episode_number = random.randint(1,178)
 
@@ -407,7 +402,7 @@ while user_input != 'q':
 
     # Displaying the randomly selected episode to the user.
     print(f"""\nThe Simpsons Random Episode Picker has chosen...
-    Episode #{random_episode_number}: "{first_178_episodes_dict[random_episode_number]}".""")
+Episode #{random_episode_number}: "{first_178_episodes_dict[random_episode_number]}".""")
 
     # Displaying the Disney+ & DVD disc information to the user.
     disney_number()

@@ -240,11 +240,12 @@ first_178_episodes_dict = {
 
 # Defining the menu function
 def menu():
-    print("""- Enter 'R' for a random episode from any season
-- Enter a numeric key from '1' to '8' to pick a random episode from a season
+    print("""Welcome to The Simpsons Random Episode Picker!
+This program currently features every episode from Seasons 1-8.          
+- Enter 'R' for a random episode from any season.
+- Enter a numeric key from '1' to '8' to pick a random episode from a season.
 (e.g. enter '1' for a random Season 1 episode, '2' for Season 2, etc.)                   
-- Enter 'Q' to quit.
-""")
+- Enter 'Q' to quit.""")
 
 # Defining the Disney+ episode number function, which specifies the season
 # and episode numbers as listed on Disney+ (e.g. Season 2: Episode 1, etc.)
@@ -365,38 +366,42 @@ def disc_finder():
         print("DVD: Season 8, Disc 4.")
 
 # THE PROGRAM
-print("""Welcome to The Simpsons Random Episode Picker!
-This program currently features every episode from Seasons 1-8.
-""")
-
 user_input = ''
 while user_input != 'q':
     menu()
     # Menu choices
     user_input = input("Please enter your selection here: ").lower()
-
-    if user_input == 'q':
-        sys.exit("Thank you for using The Simpsons Random Episode Picker!")
-    
-    elif user_input == '1':
-        random_episode_number = random.randint(1,13)        
+  
+    # SEASON 1
+    if user_input == '1':
+        random_episode_number = random.randint(1,13)  
+    # SEASON 2      
     elif user_input == '2':
-        random_episode_number = random.randint(14,35)          
+        random_episode_number = random.randint(14,35)
+    # SEASON 3         
     elif user_input == '3':
-        random_episode_number = random.randint(36,59)            
+        random_episode_number = random.randint(36,59)
+    # SEASON 4              
     elif user_input == '4':
         random_episode_number = random.randint(60,81)         
+    # SEASON 5
     elif user_input == '5':
-        random_episode_number = random.randint(82,103)                
+        random_episode_number = random.randint(82,103)  
+    # SEASON 6                  
     elif user_input == '6':
-        random_episode_number = random.randint(104,128)          
+        random_episode_number = random.randint(104,128) 
+    # SEASON 7         
     elif user_input == '7':
-        random_episode_number = random.randint(129,153)             
+        random_episode_number = random.randint(129,153)
+    # SEASON 8             
     elif user_input == '8':
-        random_episode_number = random.randint(154,178)         
+        random_episode_number = random.randint(154,178)
+    # ANY SEASON
     elif user_input == 'r':
         random_episode_number = random.randint(1,178)
-
+    # QUIT
+    elif user_input == 'q':
+        sys.exit("Thank you for using The Simpsons Random Episode Picker!")
     else:
         print("ERROR: Invalid selection. Please restart program.")
 
@@ -408,3 +413,20 @@ Episode #{random_episode_number}: "{first_178_episodes_dict[random_episode_numbe
     disney_number()
     disc_finder()
     print('')
+
+    # Prompting a reselection
+    reselection = ''
+    while reselection != 'y' or reselection != 'n':
+        print("""Would you like to select another episode?
+- Enter 'Y' to return to the menu.
+- Enter 'N' to quit.""")
+        reselection = input("Please enter your selection here: ").lower()
+        # RETURN TO MENU
+        if reselection == 'y':
+            print('')
+            break
+        # QUIT
+        elif reselection == 'n':
+            sys.exit("Thank you for using The Simpsons Random Episode Picker!")
+        else:
+            print("ERROR: Invalid selection. Please enter only 'Y' or 'N'.")
